@@ -368,6 +368,32 @@ export class BattleStream extends Streams.ObjectReadWriteStream<string> {
 			battle.field.setTerrain(toID(terrain), 'debug');
 			break;
 		}
+		case 'basestats':
+		case 'bs': {
+			if (targets.length !== 8) {
+				battle.add("||<<< Error: Format should be: basestats PLAYER, POKEMON, HP, ATK, DEF, SPA, SPD, SPE");
+				return;
+			}
+			const [player, pokemon, hpStr, atkStr, defStr, spaStr, spdStr, speStr] = targets.map(t => t.trim());
+			const p = getPokemon(player, pokemon);
+			const hp = Number(hpStr);
+			const atk = Number(atkStr);
+			const def = Number(defStr);
+			const spa = Number(spaStr);
+			const spd = Number(spdStr);
+			const spe = Number(speStr);
+			if (![hp, atk, def, spa, spd, spe].every(stat => Number.isInteger(stat))) {
+				battle.add("||<<< Error: All stats must be integers between 1 and 255.");
+				return;
+			}
+			if ([hp, atk, def, spa, spd, spe].some(stat => stat < 1 || stat > 255)) {
+				battle.add("||<<< Error: Stats must be integers between 1 and 255.");
+				return;
+			}
+			const newBaseStats: StatsTable = { hp, atk, def, spa, spd, spe };
+			p.setBaseStats(newBaseStats);
+			break;
+		}
 		case 'reseed': {
 			battle.resetRNG(target as PRNGSeed);
 			if (targets.length) battle.add(`||Reseeded to ${targets.join(',')}`);
