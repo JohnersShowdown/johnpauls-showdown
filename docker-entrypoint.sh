@@ -1,7 +1,14 @@
 #!/bin/sh
 set -e
 
-mkdir -p /app/logs /app/databases
+mkdir -p \
+    /app/logs \
+    /app/logs/chat \
+    /app/logs/modlog \
+    /app/logs/repl \
+    /app/logs/tickets \
+    /app/logs/ladderip \
+    /app/databases
 
 # Bootstrap config.js when a fresh persistent volume is mounted at /app/config.
 # (When no volume is mounted, the build step has already created this file.)

@@ -54,12 +54,13 @@ export const Repl = new class ReplSingleton {
 
 		// TODO: Windows does support the REPL when using named pipes. For now,
 		// this only supports UNIX sockets.
+		const directory = path.dirname(path.resolve(__dirname, '..', Config.replsocketprefix || 'logs/repl', 'app'));
+		fs.mkdirSync(directory, {recursive: true});
 
 		Repl.setupListeners();
 
 		if (filename === 'app') {
 			// Clean up old REPL sockets.
-			const directory = path.dirname(path.resolve(__dirname, '..', Config.replsocketprefix || 'logs/repl', 'app'));
 			for (const file of fs.readdirSync(directory)) {
 				const pathname = path.resolve(directory, file);
 				const stat = fs.statSync(pathname);
