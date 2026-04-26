@@ -1,0 +1,37 @@
+.git
+.github
+.gitattributes
+.gitignore
+.vscode
+.editorconfig
+.eslintrc-no-types.json
+.eslintrc-types.json
+.eslintcache
+.eslintfullcache
+.npmrc
+
+node_modules
+.*-dist/
+package-lock.json
+
+# local runtime state — should come from Coolify persistent volumes, not the image
+config/config.js
+config/usergroups.csv
+logs/*
+!logs/.gitkeep
+databases/*.db*
+test/modlogs
+tools/set-import/sets
+
+# editor / OS noise
+**/.DS_Store
+*~
+.idea
+*.swp
+*.log
+npm-debug.log
+
+CONTRIBUTING.md
+PROTOCOL.md
+old-simulator-doc.txt
+simulator-doc.txt

@@ -167,11 +167,14 @@ Y929lRybWEiKUr+4Yw2O1W0CAwEAAQ==
 
 /**
  * routes - where Pokemon Showdown is hosted.
- *   Don't change this setting - there aren't any other options right now
+ *   `client` can be overridden at runtime via the PS_CLIENT_URL environment
+ *   variable (set it to a bare hostname, e.g. `play.example.com` — no protocol,
+ *   no trailing slash). The same pattern can be applied to the other entries
+ *   if you self-host the dex/replays/root sites as well.
  */
 exports.routes = {
 	root: 'pokemonshowdown.com',
-	client: 'play.pokemonshowdown.com',
+	client: process.env.PS_CLIENT_URL || 'play.pokemonshowdown.com',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'replay.pokemonshowdown.com',
 };
