@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Server
+        # ... your existing deploy steps ...
+
+      - name: Trigger Client in Coolify
+        run: |
+          curl -X GET "${{ secrets.COOLIFY_WEBHOOK_URL }}"
