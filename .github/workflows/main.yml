@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - main
+      -  AnnikaCodes-patch-1
 
 jobs:
   deploy:
