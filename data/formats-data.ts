@@ -6212,4 +6212,8 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
+	springbun: {
+		isNonstandard: 'Past',
+		tier: 'LC',
+	}
 };
