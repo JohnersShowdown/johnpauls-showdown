@@ -16799,6 +16799,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         kind: "Bunny",
         description: ["Its fluffy tail releases a potent pheromone mimicking the scent of spring. Wherever it hops, dormant buds burst into full bloom.",
             "Its oversized ears can pick up even the faintest rustling of leaves. If danger is near, it burrows into the nearest underbrush."
+		],
     },
     snapbun: {
         num: 2001,
@@ -16815,6 +16816,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         kind: "Thorny",
         description: ["Its cottony mane crackles with static energy before battle. Highly territorial, it will charge at foes twice its size without hesitation.",
             "The thorns on its back stiffen when it senses danger. Farmers once tamed Snapbun to guard their crops."
+		],
     },
     faestalk: {
         num: 2002,
@@ -16830,5 +16832,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         kind: "Beanstalk",
         description: ["They store nutrients in their tails, which have no limit on how long they can grow. There is a well-known fairytale about a Faestalk so tall it reached the clouds.",
             "The berries nestled in its cotton-like fur are prized for their ambrosial taste and potent regenerative properties."
-    }
+		],
+	},
 };

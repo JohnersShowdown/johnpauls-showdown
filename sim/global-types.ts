@@ -1146,7 +1146,7 @@ interface SpeciesData {
 
 	// Custom Fields
 	kind: string;
-	description: string;
+	description: string[];
 }
 
 type ModdedSpeciesData = SpeciesData | Partial<Omit<SpeciesData, 'name'>> & {inherit: true};

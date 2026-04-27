@@ -240,7 +240,7 @@ export class Pokemon {
 
 	// Custom Fields
 	kind: string = '';
-	description: string = '';
+	description: string[] = [];
 
 	/**
 	 * An object for storing untyped data, for mods to use.
