@@ -16830,5 +16830,5 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         kind: "Beanstalk",
         description: ["They store nutrients in their tails, which have no limit on how long they can grow. There is a well-known fairytale about a Faestalk so tall it reached the clouds.",
             "The berries nestled in its cotton-like fur are prized for their ambrosial taste and potent regenerative properties."
-    },	
+    }
 };

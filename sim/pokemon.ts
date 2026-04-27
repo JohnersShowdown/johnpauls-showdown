@@ -238,6 +238,10 @@ export class Pokemon {
 	modifiedStats?: StatsExceptHPTable;
 	modifyStat?: (this: Pokemon, statName: StatNameExceptHP, modifier: number) => void;
 
+	// Custom Fields
+	kind: string = '';
+	description: string = '';
+
 	/**
 	 * An object for storing untyped data, for mods to use.
 	 */
